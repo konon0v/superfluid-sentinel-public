@@ -10,6 +10,7 @@ Currently supported setups:
 
 * Native
 * Docker
+* 
 
 ### Prerequisites
 
