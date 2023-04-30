@@ -1,0 +1,68 @@
+{
+  "schema-version": "2",
+  "name": "sentinel-manifest",
+  "networks": {
+    "1": {
+      "name": "Ethereum",
+      "network_type": "evm",
+      "cid": "QmaSxirXKQJwAhn6xbvHHjC21H7GbA9uCv8jFuk1HwKumw"
+    },
+    "5": {
+      "name": "Goerli Testnet",
+      "network_type": "evm",
+      "cid": "QmccyRm7SL5qACNjSTPsr2sZuDAjHS1xncn65BM7j6JATG"
+    },
+    "10": {
+      "name": "Optimism",
+      "network_type": "evm-l2",
+      "cid": "Qmb77eV2wMmVAuS5rCtjbCRHdDaaBFQ4Yt3245dEGSLhfY"
+    },
+    "56": {
+      "name": "Binance Smart Chain",
+      "network_type": "evm",
+      "cid": "QmWqmhB4RDDCfW9uKp9SRmfSBKcJyrbgDpRdoQ5K4VGV4d"
+    },
+    "100": {
+      "name": "Gnosis Chain",
+      "network_type": "evm",
+      "cid": "QmQCjDmdVg8TC5x23rkkh6MzT8ytPBnLH41ov172kkXW72"
+    },
+    "137": {
+      "name": "Polygon",
+      "network_type": "evm",
+      "cid": "QmTQh2bU9vmZac2SUM1vy1KLVi42eBbcJBGQGidnBKeebF"
+    },
+    "420": {
+      "name": "Optimism Goerli Testnet",
+      "network_type": "evm-l2"
+    },
+    "42161": {
+      "name": "Arbitrum One",
+      "network_type": "evm-l2",
+      "cid": "QmNk57Ws3EzM8P4AriE1ysySrweGM8YN59jSTqpiS7FpeQ"
+    },
+    "42220": {
+      "name": "Celo",
+      "network_type": "evm",
+      "cid": "QmSHrE8F8p6aDi725o2AeDB5PzyVhVKBXDXTbifcoCkytg"
+    },
+    "43113": {
+      "name": "Avalanche Fuji Testnet",
+      "network_type": "evm"
+    },
+    "43114": {
+      "name": "Avalanche C-Chain",
+      "network_type": "evm",
+      "cid": "QmbGimvjMnhRwtLbqXxuHmVHRiEWzPZKy3R9nUbQ7WXQgM"
+    },
+    "80001": {
+      "name": "Polygon Mumbai Testnet",
+      "network_type": "evm",
+      "cid": "QmU8UmphFL5t5vdsdLYGztkor67We7R56XcR591KuFJncW"
+    },
+    "421613": {
+      "name": "Arbitrum Goerli Testnet",
+      "network_type": "evm-l2"
+    }
+  }
+}

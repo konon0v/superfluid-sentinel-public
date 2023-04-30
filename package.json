@@ -1,0 +1,62 @@
+{
+  "name": "superfluid-sentinel",
+  "version": "0.10.0",
+  "description": "Superfluid Sentinel",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js $1",
+    "toga-status": "node scripts/printTOGAstatus.js",
+    "build-snap": "node scripts/buildSnapshot.js",
+    "test-sync": "node scripts/testSync.js",
+    "test-node": "node_modules/.bin/mocha -t 1000000 test/integration/node.integration.test.js",
+    "test-gas": "node_modules/.bin/mocha -t 1000000 test/integration/gas.integration.test.js",
+    "test-ida": "node_modules/.bin/mocha -t 1000000 test/integration/ida.integration.test.js",
+    "test-cfa": "node_modules/.bin/mocha -t 1000000 test/integration/cfa.integration.test.js",
+    "test-batch": "node_modules/.bin/mocha -t 1000000 test/integration/batch.integration.test.js",
+    "test-unit": "node_modules/.bin/mocha test/unit-tests/*.js",
+    "test": "npm run test-unit && npm run test-node && npm run test-gas && npm run test-ida && npm run test-cfa && npm run test-batch"
+  },
+  "keywords": [
+    "superfluid",
+    "sentinel",
+    "solvency"
+  ],
+  "author": "Superfluid",
+  "license": "MIT",
+  "dependencies": {
+    "@decentral.ee/web3-helpers": "^0.5.3",
+    "@slack/webhook": "^6.1.0",
+    "@superfluid-finance/ethereum-contracts": "1.0.0",
+    "@superfluid-finance/js-sdk": "0.5.12",
+    "@superfluid-finance/metadata": "github:superfluid-finance/metadata#BatchLiquidatorV2",
+    "@truffle/contract": "^4.4.2",
+    "async": "^3.2.2",
+    "axios": "^0.24.0",
+    "bip39": "^3.0.4",
+    "commander": "^8.3.0",
+    "dotenv": "^10.0.0",
+    "eth-block-tracker": "^5.0.1",
+    "ethereumjs-wallet": "^1.0.2",
+    "ethjs-abi": "^0.2.1",
+    "express": "^4.17.2",
+    "node-telegram-bot-api": "^0.61.0",
+    "prom-client": "^14.0.1",
+    "sequelize": "^6.12.5",
+    "sqlite3": "^5.0.2",
+    "web3": "1.6.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "ganache": "^6.4.5",
+    "ganache-core": "^2.13.2",
+    "ganache-time-traveler": "^1.0.16",
+    "husky": "^7.0.4",
+    "mocha": "^9.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}

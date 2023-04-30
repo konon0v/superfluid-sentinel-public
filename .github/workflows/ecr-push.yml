@@ -1,0 +1,35 @@
+name: Building and pushing a docker image to Amazon ECR
+on:
+  push:
+    # paths:
+    # - src/**
+    branches:
+    - master
+    - main
+env:
+  AWS_DEFAULT_REGION: eu-central-1
+  AWS_DEFAULT_OUTPUT: json
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  CONTAINER_IMAGE: v0.0.${{ github.run_number }}
+
+jobs:
+  build-and-push:
+    name: Building and pushing image to AWS ECR
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup ECR
+      run: |
+        echo $( aws ecr get-authorization-token --region $AWS_DEFAULT_REGION --output text --query 'authorizationData[].authorizationToken' | base64 -d | cut -d: -f2) | docker login -u AWS https://$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com --password-stdin
+    - name: Build and tag the image
+      run: |
+        docker build \
+          -t $CONTAINER_IMAGE \
+          -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/superfluid-sentinel:$CONTAINER_IMAGE .
+    - name: Push
+      run: |
+        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/superfluid-sentinel:$CONTAINER_IMAGE

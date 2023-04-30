@@ -1,0 +1,19 @@
+[Unit]
+Description=Superfluid Sentinel
+After=network.target
+
+[Service]
+User=<username>
+WorkingDirectory=<sentinel root directory>
+
+ExecStart=<path to npm> start
+
+# If you are using nvm, you can use this instead:
+#Environment="NODE_VERSION=14"
+#ExecStart=<PATH TO HOME>/.nvm/nvm-exec npm start
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
