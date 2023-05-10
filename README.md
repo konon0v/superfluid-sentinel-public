@@ -12,6 +12,7 @@ Currently supported setups:
 * Docker
 
 ## Prerequisites
+Test
 
 First, prepare an account funded with native coins for transaction fees.
 Then prepare a file `.env` with your configuration. You can start with the provided example:
