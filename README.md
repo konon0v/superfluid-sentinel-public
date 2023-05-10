@@ -23,7 +23,7 @@ cp .env-example .env
 
 The following configuration items are required and don't have default values:
 
-* `HTTP_RPC_NODE` (cmdline argument: `-H`)
+*# `HTTP_RPC_NODE` (cmdline argument: `-H`)
 * `PRIVATE_KEY` (cmdline argument: `-k`) or MNEMONIC (cmdline argument: `-m`)
 
 In order to associate a sentinel instance with a PIC account, set the `PIC` env variable (cmdline argument: `--pic`).
